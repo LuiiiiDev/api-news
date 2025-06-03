@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ShareButtons from '@/app/components/ShareButtons';
+import ShareButtons from '@/components/ShareButtons';
 import { 
   ArrowLeft, 
   Calendar, 
@@ -9,7 +9,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import NewsImage from './NewsImage';
-import { NewsAPIArticle } from '@/app/types';
+import { NewsAPIArticle } from '@/types';
 
 interface NewsDetailProps {
   article: NewsAPIArticle;

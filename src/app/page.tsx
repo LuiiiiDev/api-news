@@ -4,14 +4,16 @@ import { useState, useEffect } from 'react';
 import { Newspaper, Search, AlertCircle } from 'lucide-react';
 
 // Components
-import Header from '@/app/components/Header';
-import HeroSection from '@/app/components/HeroSection';
-import NewsSection from '@/app/components/NewsSection';
-import NewsDetail from '@/app/components/NewsDetail';
-import Footer from '@/app/components/Footer';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import NewsSection from '@/components/NewsSection';
+import NewsDetail from '@/components/NewsDetail';
+import Footer from '@/components/Footer';
+import ThemeTest from '@/components/ThemeTest';
+
 
 // Types and Services
-import { NewsAPIArticle } from '@/app/types';
+import { NewsAPIArticle } from '@/types';
 import { newsApi } from '@/services/newsApi';
 
 export default function Home() {
@@ -112,13 +114,13 @@ export default function Home() {
     if (searchQuery.trim()) {
       return <Search className="w-6 h-6 mr-2 text-green-500" />;
     }
-    return <Newspaper className="w-6 h-6 mr-2 text-blue-500" />;
+    return <Newspaper className="w-6 h-6 mr-2 text-cyan-500 dark:text-blue-500" />;
   };
 
   // Si se está mostrando el detalle, renderizar solo el componente NewsDetail
   if (showDetail && selectedArticle) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+      <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
         <NewsDetail 
           article={selectedArticle} 
           onBack={closeNewsDetail}
@@ -130,7 +132,7 @@ export default function Home() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+      <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
         <Header 
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -142,7 +144,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
-              <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <div className="w-16 h-16 border-4 border-cyan-600 dark:border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
               <p className="text-gray-600 dark:text-gray-300 text-lg">Loading news...</p>
             </div>
           </div>
@@ -153,7 +155,7 @@ export default function Home() {
 
   // Vista principal
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
       <Header 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}

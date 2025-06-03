@@ -2,7 +2,7 @@
 
 import { Clock, TrendingUp, ChevronRight } from 'lucide-react';
 import NewsImage from './NewsImage';
-import { NewsAPIArticle } from '@/app/types';
+import { NewsAPIArticle } from '@/types';
 
 interface NewsCardProps {
   article: NewsAPIArticle;
@@ -34,7 +34,7 @@ const NewsCard = ({ article, featured = false, onClick }: NewsCardProps) => {
     <article 
       onClick={handleCardClick}
       className={`group cursor-pointer transition-all duration-300 hover:scale-105 ${
-        featured ? 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20' : 'bg-white dark:bg-gray-800'
+        featured ? 'bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-blue-900/20 dark:to-purple-900/20' : 'bg-white dark:bg-gray-800'
       } rounded-xl shadow-lg hover:shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700`}
     >
       <div className="relative overflow-hidden">
@@ -45,7 +45,7 @@ const NewsCard = ({ article, featured = false, onClick }: NewsCardProps) => {
           priority={featured}
         />
         <div className="absolute top-4 left-4">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-blue-600 dark:to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
             {article.source.name || 'General'}
           </span>
         </div>
@@ -56,7 +56,7 @@ const NewsCard = ({ article, featured = false, onClick }: NewsCardProps) => {
         )}
       </div>
       <div className="p-6">
-        <h3 className={`font-bold mb-2 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors ${
+        <h3 className={`font-bold mb-2 line-clamp-2 group-hover:text-cyan-600 dark:group-hover:text-blue-400 transition-colors ${
           featured ? 'text-xl' : 'text-lg'
         }`}>
           {article.title}

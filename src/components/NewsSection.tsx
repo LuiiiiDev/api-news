@@ -2,7 +2,7 @@
 
 import { Search } from 'lucide-react';
 import NewsCard from './NewsCard';
-import { NewsAPIArticle } from '@/app/types';
+import { NewsAPIArticle } from '@/types';
 
 interface NewsSectionProps {
   title: string;

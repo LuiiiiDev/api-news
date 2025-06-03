@@ -1,6 +1,6 @@
 'use client';
 
-import { HeroSectionProps } from '@/app/types';
+import { HeroSectionProps } from '@/types';
 
 const HeroSection = ({ 
   title = "Stay Informed with Latest News",
@@ -12,12 +12,12 @@ const HeroSection = ({
         {title.includes('Latest News') ? (
           <>
             Stay Informed with{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-blue-600 dark:to-purple-600 bg-clip-text text-transparent">
               Latest News
             </span>
           </>
         ) : (
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-blue-600 dark:to-purple-600 bg-clip-text text-transparent">
             {title}
           </span>
         )}

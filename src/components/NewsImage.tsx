@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from 'react';
 import { ImageIcon } from 'lucide-react';
-import { NewsImageProps } from '@/app/types';
+import { NewsImageProps } from '@/types';
 
 
 const NewsImage = ({ 
