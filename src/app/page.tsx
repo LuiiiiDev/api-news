@@ -9,8 +9,6 @@ import HeroSection from '@/components/HeroSection';
 import NewsSection from '@/components/NewsSection';
 import NewsDetail from '@/components/NewsDetail';
 import Footer from '@/components/Footer';
-import ThemeTest from '@/components/ThemeTest';
-
 
 // Types and Services
 import { NewsAPIArticle } from '@/types';
@@ -45,7 +43,7 @@ export default function Home() {
         }
         
         setArticles(newsArticles);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error('Error fetching news:', err);
         setError('Failed to load news. Please try again later.');
         setArticles([]);
@@ -72,7 +70,7 @@ export default function Home() {
         if (searchResults.length === 0) {
           setError(`No results found for "${searchQuery}"`);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error('Error searching news:', err);
         setError('Failed to search news. Please try again.');
         setArticles([]);
